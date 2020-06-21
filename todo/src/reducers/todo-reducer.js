@@ -1,13 +1,13 @@
-import React from "react";
+import {ADD_TODO} from "../actions";
 
-{
+export const initialState = {
     item: 'Learn about reducers',
     completed: false,
     id: 3892987589
 }
 
 
-const reducer =(state,action) =>{
+export const reducer =(state,action) =>{
     
     switch (action.type){
         case ADD_TODO:
@@ -15,7 +15,8 @@ const reducer =(state,action) =>{
                 ...state.item,
                 item: action.payload 
             }
+        default:
+            return state;
     }
-    
 
 }
